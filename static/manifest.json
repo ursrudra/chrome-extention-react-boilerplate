@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "React-chome extention",
+    "description": "A chrome extention build with react",
+    "version": "1.0.0",
+    "icons": {
+        "16": "logo.svg",
+        "48": "logo.svg",
+        "128": "logo.svg"
+    },
+    "action": {
+        "default_title": "React-Chrome extention",
+        "default_popup": "popup.html",
+        "default_icon": "logo.svg"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript.js"],
+            "css": ["contentScript.css"]
+        }
+    ],
+    "permissions": ["alarms", "contextMenus", "storage"],
+    "options_page": "options.html"
+}
